@@ -77,7 +77,7 @@
       };
     },
     computed: {
-      isGroup() {
+      isGroup() { // 循环查找ElRadioGroup
         let parent = this.$parent;
         while (parent) {
           if (parent.$options.componentName !== 'ElRadioGroup') {
@@ -95,7 +95,7 @@
         },
         set(val) {
           if (this.isGroup) {
-            this.dispatch('ElRadioGroup', 'input', [val]);
+            this.dispatch('ElRadioGroup', 'input', [val]); // 向ElRadioGroup组件提交input事件
           } else {
             this.$emit('input', val);
           }
@@ -123,7 +123,7 @@
 
     methods: {
       handleChange() {
-        this.$nextTick(() => {
+        this.$nextTick(() => { // radio绑定至变化后触发change事件
           this.$emit('change', this.model);
           this.isGroup && this.dispatch('ElRadioGroup', 'handleChange', this.model);
         });

@@ -27,10 +27,10 @@
     name: 'ElButton',
 
     inject: {
-      elForm: {
+      elForm: { // form 组件实例
         default: ''
       },
-      elFormItem: {
+      elFormItem: { // formitem 的组件实例
         default: ''
       }
     },

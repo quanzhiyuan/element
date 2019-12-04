@@ -8,7 +8,7 @@ export default {
       type: String,
       default: 'div'
     },
-    gutter: Number,
+    gutter: Number, // 间隔 
     type: String,
     justify: {
       type: String,
@@ -42,6 +42,6 @@ export default {
         { 'el-row--flex': this.type === 'flex' }
       ],
       style: this.style
-    }, this.$slots.default);
+    }, this.$slots.default); // 子节点数组
   }
 };

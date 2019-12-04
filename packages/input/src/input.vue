@@ -108,6 +108,12 @@
   </div>
 </template>
 <script>
+  /**
+   * 解决问题: 
+   * 1. 中文输入法问题： compositionstart，compositionupdate， compositionend
+   * 2. 将父组件的props 绑定到input 上inheritAttrs: false,v-bind="$attrs"
+   * 
+   */
   import emitter from 'element-ui/src/mixins/emitter';
   import Migrating from 'element-ui/src/mixins/migrating';
   import calcTextareaHeight from './calcTextareaHeight';
